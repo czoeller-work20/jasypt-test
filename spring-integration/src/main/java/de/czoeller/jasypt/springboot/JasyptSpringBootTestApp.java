@@ -1,6 +1,5 @@
 package de.czoeller.jasypt.springboot;
 
-import com.ulisesbocchio.jasyptspringboot.annotation.EncryptablePropertySource;
 import org.jasypt.encryption.StringEncryptor;
 import org.jasypt.encryption.pbe.PooledPBEStringEncryptor;
 import org.jasypt.encryption.pbe.config.SimpleStringPBEConfig;
@@ -11,9 +10,12 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 
 @SpringBootApplication
-@EncryptablePropertySource(name = "EncryptedProperties", value = "classpath:encrypted.properties")
+@Configuration
+@PropertySource(name = "EncryptedProperties", value = "classpath:encrypted.properties")
 public class JasyptSpringBootTestApp implements CommandLineRunner {
 
     private static Logger LOG = LoggerFactory.getLogger(JasyptSpringBootTestApp.class);

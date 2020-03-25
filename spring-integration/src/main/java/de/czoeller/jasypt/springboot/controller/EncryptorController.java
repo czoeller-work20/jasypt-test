@@ -20,6 +20,6 @@ public class EncryptorController {
     @ResponseBody
     @RequestMapping(value = "/encrypt")
     public String encrypt(@RequestParam("value") String value) {
-        return String.format("ENV(%s)", encryptorService.encrypt(value));
+        return String.format("ENC(%s)", encryptorService.encrypt(value));
     }
 }

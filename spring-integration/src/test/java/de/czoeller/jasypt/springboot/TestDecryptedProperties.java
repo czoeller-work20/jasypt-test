@@ -13,9 +13,6 @@ import static org.junit.Assert.assertThat;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(classes = JasyptSpringBootTestApp.class)
-//@EncryptablePropertySource(name = "EncryptedProperties", value = "classpath:encrypted.properties")
-//@TestConfiguration()
-//@PropertySource("classpath:encrypted.properties")
 public class TestDecryptedProperties {
 
     final EncryptorService encryptorService;
